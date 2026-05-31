@@ -9,8 +9,9 @@ import {
   SiTensorflow, SiPytorch, SiOpencv, SiScikitlearn,
   SiPandas, SiNumpy, SiMongodb, SiMysql, SiStreamlit,
   SiJavascript, SiCplusplus, SiPostman, SiVercel,
-  SiJupyter, SiVisualstudiocode,
+  SiJupyter,
 } from 'react-icons/si';
+import { VscVscode } from 'react-icons/vsc';
 
 // ─── Skill Data ───────────────────────────────────────────────────────────────
 const categories = [
@@ -53,7 +54,7 @@ const categories = [
     skills: [
       { name: 'React',     icon: FaReact,     level: 80, color: '#61DAFB' },
       { name: 'Git',       icon: FaGitAlt,    level: 88, color: '#F05032' },
-      { name: 'VS Code',   icon: SiVisualstudiocode, level: 95, color: '#007ACC' },
+      { name: 'VS Code',   icon: VscVscode,          level: 95, color: '#007ACC' },
       { name: 'Postman',   icon: SiPostman,   level: 78, color: '#FF6C37' },
       { name: 'Vercel',    icon: SiVercel,    level: 75, color: '#FFFFFF' },
     ],
