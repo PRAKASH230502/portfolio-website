@@ -12,8 +12,10 @@ import Projects from './components/Projects';
 import NotFound from './components/NotFound';
 import ScrollProgress from './components/ScrollProgress';
 import PageTransition from './components/PageTransition';
+import CursorGlow from './components/CursorGlow';
 import { AnimatePresence } from 'framer-motion';
 import { useScrollToHash } from './hooks/useScrollToHash';
+
 
 function ScrollHandler() {
   useScrollToHash();
@@ -24,6 +26,7 @@ function ScrollHandler() {
 const App = () => {
   return (
     <Router>
+      <CursorGlow />
       <ScrollHandler />
       <div className="bg-[#030712] min-h-screen font-sans">
         <ScrollProgress />
