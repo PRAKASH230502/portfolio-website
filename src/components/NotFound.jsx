@@ -1,3 +1,4 @@
+// NotFound component - Updated
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiHome, FiAlertCircle } from 'react-icons/fi';
