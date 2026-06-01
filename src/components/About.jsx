@@ -1,4 +1,4 @@
-// src/components/About.jsx
+// src/components/About.jsx - Updated
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiAward, FiEye, FiHeart, FiStar, FiCode, FiCpu, FiTerminal } from 'react-icons/fi';
