@@ -1,3 +1,4 @@
+// Projects component - Updated
 import React, { useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiExternalLink, FiGithub, FiSearch, FiX, FiFilter } from 'react-icons/fi';
