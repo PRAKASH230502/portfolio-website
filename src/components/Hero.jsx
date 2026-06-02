@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { FiDownload, FiArrowRight, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
-import profileImg from '../assets/profile.jpg';
+import profileImg from '../assets/img.jpeg';
 import { useTypewriter } from '../hooks/useTypewriter';
 
 // ─── Mouse-Reactive Neural Canvas ─────────────────────────────────────────────
@@ -386,7 +386,7 @@ const Hero = () => {
             {[
               { href: 'https://github.com/PRAKASH230502', icon: FiGithub, label: 'GitHub', hoverClass: 'hover:border-violet-500/60 hover:text-violet-300 hover:bg-violet-600/15 hover:shadow-[0_0_20px_rgba(124,58,237,0.4)]' },
               { href: 'https://www.linkedin.com/in/prakash-mani-181366275/', icon: FiLinkedin, label: 'LinkedIn', hoverClass: 'hover:border-cyan-500/60 hover:text-cyan-300 hover:bg-cyan-600/15 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]' },
-              { href: 'mailto:prakashmanipatel7@gmail.com', icon: FiMail, label: 'Email', hoverClass: 'hover:border-accent-500/60 hover:text-accent-300 hover:bg-accent-600/15 hover:shadow-[0_0_20px_rgba(249,115,22,0.4)]' },
+              { href: 'mailto:prakashmanip2002@gmail.com', icon: FiMail, label: 'Email', hoverClass: 'hover:border-accent-500/60 hover:text-accent-300 hover:bg-accent-600/15 hover:shadow-[0_0_20px_rgba(249,115,22,0.4)]' },
             ].map(({ href, icon: Icon, label, hoverClass }) => (
               <a
                 key={label}
