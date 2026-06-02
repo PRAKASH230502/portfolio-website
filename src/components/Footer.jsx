@@ -18,7 +18,7 @@ const socials = [
   },
   {
     icon: FiMail,
-    href: 'mailto:prakashmanipatel7@gmail.com',
+    href: 'mailto:prakashmanip2002@gmail.com',
     label: 'Email',
     hoverColor: 'hover:text-accent-400 hover:border-accent-500/40 hover:bg-accent-600/10 hover:shadow-[0_0_16px_rgba(249,115,22,0.4)]',
   },
