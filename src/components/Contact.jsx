@@ -27,8 +27,8 @@ const socials = [
   {
     icon: FiMail,
     label: 'Email',
-    handle: 'prakashmanipatel7@gmail.com',
-    href: 'mailto:prakashmanipatel7@gmail.com',
+    handle: 'prakashmanip2002@gmail.com',
+    href: 'mailto:prakashmanip2002@gmail.com',
     color: 'hover:border-accent-500/40 hover:bg-accent-600/10 hover:text-accent-300',
     iconColor: 'text-white/60',
   },
@@ -45,11 +45,32 @@ const socials = [
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [focused, setFocused]     = useState(null);
+  const [loading, setLoading]     = useState(false);
+  const [error, setError]         = useState(null);
 
-  // Dynamic redirect — works on any domain (localhost, Vercel, custom)
-  const redirectUrl = typeof window !== 'undefined'
-    ? `${window.location.origin}/thank-you`
-    : '/thank-you';
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    const formData = new FormData(e.target);
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/prakashmanip2002@gmail.com', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData,
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        e.target.reset();
+      } else {
+        setError('Kuch gadbad ho gayi. Dobara try karein!');
+      }
+    } catch {
+      setError('Network error. Please check your connection.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const inputBase =
     'w-full rounded-xl border bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-all duration-300 backdrop-blur-sm';
@@ -164,13 +185,9 @@ const Contact = () => {
               </motion.div>
             ) : (
               <form
-                action="https://formsubmit.co/prakashmanipatel7@gmail.com"
-                method="POST"
                 className="space-y-5"
-                onSubmit={() => setSubmitted(true)}
+                onSubmit={handleSubmit}
               >
-                {/* Dynamic redirect — fixes localhost hardcode */}
-                <input type="hidden" name="_next" value={redirectUrl} />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_subject" value="Portfolio Contact Form Submission" />
 
@@ -226,12 +243,16 @@ const Contact = () => {
                 </div>
 
                 {/* Submit */}
+                {error && (
+                  <p className="text-rose-400 text-xs text-center">{error}</p>
+                )}
                 <button
                   type="submit"
-                  className="group w-full inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-violet-600 to-violet-500 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(124,58,237,0.4)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(124,58,237,0.7)] hover:scale-[1.01]"
+                  disabled={loading}
+                  className="group w-full inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-violet-600 to-violet-500 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(124,58,237,0.4)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(124,58,237,0.7)] hover:scale-[1.01] disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
                 >
                   <FiSend className="transition-transform duration-300 group-hover:translate-x-1" />
-                  Send Message
+                  {loading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             )}
